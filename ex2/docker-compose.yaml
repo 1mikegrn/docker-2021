@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: _docker/Dockerfile.server
+    env_file:
+      - _env/server.env
+    image: ex2/server:latest
+    ports:
+      - "8081:8080"
+  api:
+    build:
+      context: .
+      dockerfile: _docker/Dockerfile.api
+    image: ex2/api:latest
+    ports:
+      - "8080:8080"
+

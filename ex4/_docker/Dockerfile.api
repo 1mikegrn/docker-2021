@@ -1,0 +1,11 @@
+FROM python:latest
+
+USER root
+
+WORKDIR /code
+
+COPY api/ /code/api
+
+RUN pip install -e api
+
+CMD api

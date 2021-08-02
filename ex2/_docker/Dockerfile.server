@@ -1,0 +1,11 @@
+FROM python:latest
+
+USER root
+
+WORKDIR /code
+
+COPY server/ /code/server
+
+RUN pip install -e server
+
+CMD server
